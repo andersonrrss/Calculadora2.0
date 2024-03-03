@@ -22,7 +22,7 @@ document.addEventListener("keypress", function (e) {
 });
 
 function clique(elemento) {
-  if (!isNaN(elemento) || elemento == ",") {
+  if (!isNaN(elemento) || elemento == ".") {
     numbers(elemento);
   } else {
     funcao(elemento);
@@ -57,19 +57,19 @@ function funcao(operacao) {
 
 function resultado() {
   if (firstNumber.length !== 0 && secondNumber.length !== 0) {
-    firstNumber = Number(firstNumber.replace(",", "."));
-    secondNumber = Number(secondNumber.replace(",", "."));
+    firstNumber = Number(firstNumber);
+    secondNumber = Number(secondNumber);
     let conta = {
       "+": firstNumber + secondNumber,
       "-": firstNumber - secondNumber,
-      x: firstNumber * secondNumber,
+      "x": firstNumber * secondNumber,
       "÷": (firstNumber / secondNumber).toFixed(4),
     };
-    if (conta[operator]) {
+    if (conta[operator] !== undefined) {
       firstNumber = `${conta[operator]}`;
       secondNumber = "";
 
-      display.innerHTML = `${conta[operator]}`.replace(".", ",");
+      display.innerHTML = `${conta[operator]}`;
     }
   }
 }
@@ -90,17 +90,17 @@ function deleteItem() {
 
 function tradeSignal() {
   if (display.innerHTML == firstNumber) {
-    if (firstNumber) {
+    if (firstNumber.length !== 0) {
       firstNumber =
-        Number(firstNumber.replace(',', '.')) > 0
+        Number(firstNumber) > 0
           ? `-${firstNumber}`
           : Math.abs(Number(firstNumber)).toString();
       display.innerHTML = firstNumber;
     }
   } else {
-    if (secondNumber) {
+    if (secondNumber.length !== 0) {
       secondNumber =
-        Number(secondNumber.replace(',', '.')) >= 0
+        Number(secondNumber) >= 0
           ? `-${secondNumber}`
           : Math.abs(Number(secondNumber)).toString();
       display.innerHTML = secondNumber;
