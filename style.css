@@ -1,0 +1,113 @@
+html,
+body {
+  height: 100%;
+}
+
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20%;
+  height: 60%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1%;
+}
+
+.display {
+  width: 100%;
+  height: 20%;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: right;
+  padding: 5px;
+  font-size: 2em;
+}
+
+.controls {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(
+    5,
+    17%
+  ); /* Defina uma altura fixa para as linhas */
+  width: 100%;
+  grid-gap: 10px;
+  height: 75%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+}
+
+.btn:hover {
+  background-color: #cbcbcb;
+}
+#clear {
+  background-color: #ffcece;
+  color: #bd0000;
+  border: solid 1px #ff9797;
+}
+#clear:hover {
+  background-color: #ffa2a2;
+}
+#igual {
+  grid-row: span 2;
+  background-color: #c2ffc2;
+  color: green;
+  border: solid 1px #53df53;
+}
+#igual:hover {
+  background-color: #92ff92;
+}
+
+.opr {
+  color: #004585;
+  background-color: #e7f3ff;
+  border: solid 1px #8dc8ff;
+}
+.opr:hover {
+  background-color: #c1e0ff;
+}
+
+@media (max-width: 1000px) {
+  .calculator {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .calculator {
+    width: 95%;
+    height: 95%;
+  }
+  .display{
+    font-size: 3em;
+  }
+  .btn{
+    font-size: 1.5em;
+  }
+}
