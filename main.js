@@ -56,21 +56,24 @@ function funcao(operacao) {
 }
 
 function resultado() {
-  firstNumber = Number(firstNumber.replace(",", "."));
-  secondNumber = Number(secondNumber.replace(",", "."));
-  let conta = {
-    "+": firstNumber + secondNumber,
-    "-": firstNumber - secondNumber,
-    "x": firstNumber * secondNumber,
-    "÷": (firstNumber / secondNumber).toFixed(4),
-  };
-  if (conta[operator]) {
-    firstNumber = `${conta[operator]}`;
-    secondNumber = "";
+  if(firstNumber.lenght !== 0 && secondNumber.lenght !== 0){
+    firstNumber = Number(firstNumber.replace(",", "."));
+    secondNumber = Number(secondNumber.replace(",", "."));
+    let conta = {
+      "+": firstNumber + secondNumber,
+      "-": firstNumber - secondNumber,
+      "x": firstNumber * secondNumber,
+      "÷": (firstNumber / secondNumber).toFixed(4),
+    };
+    if (conta[operator]) {
+      firstNumber = `${conta[operator]}`;
+      secondNumber = "";
 
-    display.innerHTML = `${conta[operator]}`.replace('.', ',');
+      display.innerHTML = `${conta[operator]}`.replace('.', ',');
+    }
   }
 }
+
 
 function deleteItem() {
   if (display.innerHTML == firstNumber) {
