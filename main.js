@@ -77,7 +77,7 @@ function resultado() {
       secondNumber = "";
       //Atualiza o display
       display.innerHTML = `${conta[operator]}`;
-      calculateState = true;
+      calculateState = false;
     }
   }
 }
