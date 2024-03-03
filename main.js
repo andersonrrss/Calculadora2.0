@@ -44,8 +44,10 @@ function clique(elemento) {
     // Se for um operador ele apenas será adicionado a variável operator que será usada nas outras funções
     const operadores = ["+", "-", "x", "÷"];
     if (operadores.includes(elemento)) {
-      calculateState = false;
-      operator = elemento;
+      if (firstNumber.length !== 0) {
+        calculateState = false;
+        operator = elemento;
+      }
     } else if (elemento == "=") {
       resultado();
     } else if (elemento == "C") {
@@ -112,5 +114,5 @@ function clearAll() {
   secondNumber = "";
   display.innerHTML = "";
   operator = "";
-  calculateState = true
+  calculateState = true;
 }
