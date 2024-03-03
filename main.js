@@ -56,7 +56,7 @@ function funcao(operacao) {
 }
 
 function resultado() {
-  if (firstNumber.length !== 0 || secondNumber.length !== 0) {
+  
     firstNumber = Number(firstNumber.replace(",", "."));
     secondNumber = Number(secondNumber.replace(",", "."));
     let conta = {
@@ -76,6 +76,10 @@ function resultado() {
 
 
 function deleteItem() {
+if (firstNumber === '' || secondNumber === '') {
+  return false
+}
+  
   if (display.innerHTML == firstNumber) {
     if (firstNumber) {
       firstNumber = firstNumber.slice(0, -1);
@@ -86,7 +90,6 @@ function deleteItem() {
       secondNumber = secondNumber.slice(0, -1);
       display.innerHTML = secondNumber;
     }
-  }
 }
 
 function tradeSignal(){
