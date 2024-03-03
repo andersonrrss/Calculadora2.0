@@ -63,7 +63,7 @@ function resultado() {
       "+": firstNumber + secondNumber,
       "-": firstNumber - secondNumber,
       "x": firstNumber * secondNumber,
-      "÷": (firstNumber / secondNumber).toFixed(4),
+      "÷": secondNumber == 0? 0: (firstNumber / secondNumber).toFixed(4)
     };
     if (conta[operator] !== undefined) {
       firstNumber = `${conta[operator]}`;
