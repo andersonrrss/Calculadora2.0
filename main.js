@@ -92,7 +92,7 @@ function tradeSignal() {
   if (display.innerHTML == firstNumber) {
     if (firstNumber) {
       firstNumber =
-        Number(firstNumber) > 0
+        Number(firstNumber.replace(',', '.')) > 0
           ? `-${firstNumber}`
           : Math.abs(Number(firstNumber)).toString();
       display.innerHTML = firstNumber;
@@ -100,7 +100,7 @@ function tradeSignal() {
   } else {
     if (secondNumber) {
       secondNumber =
-        Number(secondNumber) >= 0
+        Number(secondNumber.replace(',', '.')) >= 0
           ? `-${secondNumber}`
           : Math.abs(Number(secondNumber)).toString();
       display.innerHTML = secondNumber;
