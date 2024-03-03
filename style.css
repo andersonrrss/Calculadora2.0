@@ -6,7 +6,7 @@ body {
 /* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-color: #262020;
   margin: 0;
   padding: 0;
   display: flex;
@@ -21,7 +21,7 @@ body {
   height: 60%;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px #000000;
   padding: 1%;
 }
 
