@@ -50,13 +50,13 @@ function funcao(operacao) {
     secondNumber = "";
     display.innerHTML = "";
     operator = "";
-  } else if (operacao == '+/-'){
-    tradeSignal()
+  } else if (operacao == "+/-") {
+    tradeSignal();
   }
 }
 
 function resultado() {
-  
+  if (firstNumber.length !== 0 && secondNumber.length !== 0) {
     firstNumber = Number(firstNumber.replace(",", "."));
     secondNumber = Number(secondNumber.replace(",", "."));
     let conta = {
@@ -74,12 +74,7 @@ function resultado() {
   }
 }
 
-
 function deleteItem() {
-if (firstNumber === '' || secondNumber === '') {
-  return false
-}
-  
   if (display.innerHTML == firstNumber) {
     if (firstNumber) {
       firstNumber = firstNumber.slice(0, -1);
@@ -90,17 +85,24 @@ if (firstNumber === '' || secondNumber === '') {
       secondNumber = secondNumber.slice(0, -1);
       display.innerHTML = secondNumber;
     }
+  }
 }
 
-function tradeSignal(){
+function tradeSignal() {
   if (display.innerHTML == firstNumber) {
     if (firstNumber) {
-      firstNumber = Number(firstNumber) > 0? `-${firstNumber}` : Math.abs(Number(firstNumber)).toString()
+      firstNumber =
+        Number(firstNumber) > 0
+          ? `-${firstNumber}`
+          : Math.abs(Number(firstNumber)).toString();
       display.innerHTML = firstNumber;
     }
   } else {
     if (secondNumber) {
-      secondNumber = Number(secondNumber) >= 0? `-${secondNumber}` : Math.abs(Number(secondNumber)).toString()
+      secondNumber =
+        Number(secondNumber) >= 0
+          ? `-${secondNumber}`
+          : Math.abs(Number(secondNumber)).toString();
       display.innerHTML = secondNumber;
     }
   }
