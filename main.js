@@ -56,7 +56,7 @@ function funcao(operacao) {
 }
 
 function resultado() {
-  if(firstNumber.lenght !== 0 && secondNumber.lenght !== 0){
+  if(firstNumber.lenght !== "" && secondNumber.lenght !== ""){
     firstNumber = Number(firstNumber.replace(",", "."));
     secondNumber = Number(secondNumber.replace(",", "."));
     let conta = {
