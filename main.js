@@ -89,21 +89,17 @@ function deleteItem() {
 }
 
 function tradeSignal() {
-  if (display.innerHTML == firstNumber) {
-    if (firstNumber.length !== 0) {
+  if (operator == "") {
       firstNumber =
-        Number(firstNumber) > 0
+        !firstNumber.includes('-')
           ? `-${firstNumber}`
-          : Math.abs(Number(firstNumber)).toString();
+          : firstNumber.replace("-", "");
       display.innerHTML = firstNumber;
-    }
   } else {
-    if (secondNumber.length !== 0) {
       secondNumber =
-        Number(secondNumber) >= 0
+        !secondNumber.includes("-")
           ? `-${secondNumber}`
-          : Math.abs(Number(secondNumber)).toString();
+          : secondNumber.replace("-", "");
       display.innerHTML = secondNumber;
-    }
   }
 }
