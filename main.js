@@ -56,20 +56,20 @@ function funcao(operacao) {
 }
 
 function resultado() {
-  if(firstNumber.lenght !== "" && secondNumber.lenght !== ""){
+  if (firstNumber.length !== 0 && secondNumber.length !== 0) {
     firstNumber = Number(firstNumber.replace(",", "."));
     secondNumber = Number(secondNumber.replace(",", "."));
     let conta = {
       "+": firstNumber + secondNumber,
       "-": firstNumber - secondNumber,
-      "x": firstNumber * secondNumber,
+      x: firstNumber * secondNumber,
       "÷": (firstNumber / secondNumber).toFixed(4),
     };
     if (conta[operator]) {
       firstNumber = `${conta[operator]}`;
       secondNumber = "";
 
-      display.innerHTML = `${conta[operator]}`.replace('.', ',');
+      display.innerHTML = `${conta[operator]}`.replace(".", ",");
     }
   }
 }
