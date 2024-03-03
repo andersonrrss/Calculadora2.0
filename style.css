@@ -101,8 +101,9 @@ body {
 
 @media screen and (max-width: 600px) {
   .calculator {
-    width: 95%;
-    height: 95%;
+    padding: 3%;
+    width: 85%;
+    height: 85%;
   }
   .display{
     font-size: 3em;
